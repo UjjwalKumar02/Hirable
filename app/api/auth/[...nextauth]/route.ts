@@ -35,6 +35,23 @@ const handler = NextAuth({
 
       return true;
     },
+
+    // Storing userID in token and session.user for future db queries
+    async jwt({ token, user }) {
+      if (user && user.email) {
+        const dbUser = await prisma.user.findUnique({
+          where: { email: user.email },
+        });
+        token.userId = dbUser?.id;
+      }
+
+      return token;
+    },
+
+    async session({ session, token }) {
+      session.user.id = token.userId;
+      return session;
+    },
   },
 });
 
