@@ -1,20 +1,27 @@
-"use client";
+import prisma from "@/lib/prisma";
+import { getServerSession } from "next-auth";
+import { DashboardContent } from "@/components/DashboardContent";
+import { Form } from "../generated/prisma/client";
+import { authOptions } from "../api/auth/[...nextauth]/route";
 
-import { Button } from "@/components/Button";
-import { signOut } from "next-auth/react";
+export default async function Dashboard() {
+  const session = await getServerSession(authOptions);
 
-export default function Dashboard() {
-  return (
-    <div className="min-h-screen flex justify-center items-center gap-4">
-      <h1>Protected dashboard</h1>
+  // Check if user is authenticated or not
+  if (!session || !session.user) {
+    return <div>You are not logged in!</div>;
+  }
 
-      <Button
-        variant="primary"
-        size="md"
-        onClick={() => signOut({ callbackUrl: "http://localhost:3000" })}
-      >
-        Logout
-      </Button>
-    </div>
-  );
+  let forms: Form[] = [];
+  try {
+    console.log("fetching db from dashboard ssr...");
+    forms = await prisma.form.findMany({
+      where: { adminId: session?.user.id },
+    });
+  } catch (error) {
+    console.log(error);
+    return;
+  }
+
+  return <DashboardContent forms={forms} />;
 }
