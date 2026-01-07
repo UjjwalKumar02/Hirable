@@ -11,7 +11,7 @@ export default function InputBox({
   defaultValue,
 }: InputBoxProps) {
   const sizeStyles = {
-    sm: "",
+    sm: "px-2 py-2 text-sm",
     md: "min-w-60 px-3 py-2 text-sm",
     lg: "",
   };

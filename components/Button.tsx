@@ -15,7 +15,7 @@ export function Button({
   };
 
   const sizeStyles = {
-    sm: "px-3 py-1.5 text-xs",
+    sm: "px-2 py-1.5 text-xs",
     md: "px-4 py-1.5 text-sm",
     lg: "px-6 py-2 text-md",
   };

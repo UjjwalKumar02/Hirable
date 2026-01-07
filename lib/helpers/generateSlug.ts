@@ -1,24 +1,23 @@
-export function generateSlug(name: string) {
-  let slug = name
+export function generateSlug(name: string): string {
+  const baseSlug = name
     .toLowerCase()
     .trim()
-    .replace(/[\s\_]+/g, "-")          // replace spaces/underscores with hyphens
-    .replace(/[^a-z0-9\-]/g, "")       // remove invalid characters
-    .replace(/-+/g, "-");             // collapse multiple hyphens
-   
-  slug += "-";
-  const params1 = "1a2b3c4d5e";
-  const params2 = "6f7g8h9i0j";
+    .replace(/[\s_]+/g, "-")
+    .replace(/[^a-z0-9-]/g, "")
+    .replace(/-+/g, "-");
 
-  for (let i = 0; i < params1.length; i++) {
-    let random = (Math.random() * 10).toFixed(0);
-    slug += params1[parseInt(random)];
+  const randomSuffix = generateRandomString(10);
+
+  return `${baseSlug}-${randomSuffix}`;
+}
+
+function generateRandomString(length: number): string {
+  const chars = "abcdefghijklmnopqrstuvwxyz0123456789";
+  let result = "";
+
+  for (let i = 0; i < length; i++) {
+    result += chars[Math.floor(Math.random() * chars.length)];
   }
 
-  for (let i = 0; i < params2.length; i++) {
-    let random = (Math.random() * 10).toFixed(0);
-    slug += params2[parseInt(random)];
-  }
-
-  return slug;
+  return result;
 }

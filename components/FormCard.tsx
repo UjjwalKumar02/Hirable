@@ -28,16 +28,16 @@ export function FormCard({ title, slug, isPublic, createdAt }: FormCardProps) {
           <Button
             variant="secondary"
             size="md"
-            onClick={() => router.push(`/form/${slug}/edit`)}
+            onClick={() => router.push(`/${slug}/design`)}
           >
-            Edit
+            Design
           </Button>
           <Button
             variant="primary"
             size="md"
-            onClick={() => router.push(`/form/${slug}/dashboard`)}
+            onClick={() => router.push(`/${slug}/analytics`)}
           >
-            Dashboard
+            Analytics
           </Button>
         </div>
       </div>

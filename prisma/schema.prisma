@@ -34,16 +34,16 @@ model Form {
 }
 
 model FormField {
-  id        String        @id @default(uuid())
+  id        String   @id @default(uuid())
   label     String
-  type      FormFieldType
-  required  Boolean       @default(false)
+  type      String
+  required  Boolean  @default(false)
   wordLimit Int?
   order     Int
-  options   Json?
+  options   String[]
   formId    String
-  form      Form          @relation(fields: [formId], references: [id])
-  createdAt DateTime      @default(now())
+  form      Form     @relation(fields: [formId], references: [id])
+  createdAt DateTime @default(now())
 
   answers Answer[]
 }
@@ -68,12 +68,12 @@ model Submission {
 }
 
 enum FormFieldType {
-  TEXT
-  LONG_TEXT
-  EMAIL
-  NUMBER
-  RADIO
-  CHECKBOX
-  DROPDOWN
-  DATE
+  text
+  longtext
+  email
+  number
+  radio
+  checkbox
+  dropdown
+  date
 }
