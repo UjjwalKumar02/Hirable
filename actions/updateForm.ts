@@ -18,29 +18,40 @@ export async function updateForm({
   try {
     console.log("Updating form in db from server action!");
 
-    await prisma.formField.deleteMany({
-      where: { formId },
-    });
+    await prisma.$transaction(
+      async (tx) => {
+        // 1. Delete old fields
+        await tx.formField.deleteMany({
+          where: { formId },
+        });
 
-    await prisma.formField.createMany({
-      data: fieldList.map((f, index) => ({
-        label: f.label,
-        type: f.type as FormFieldType,
-        required: f.required,
-        wordLimit: f.wordLimit,
-        options: f.options ?? [],
-        formId,
-        order: index + 1,
-      })),
-    });
+        // 2. Create new fields
+        await tx.formField.createMany({
+          data: fieldList.map((f, index) => ({
+            label: f.label,
+            type: f.type as FormFieldType,
+            required: f.required,
+            wordLimit: f.wordLimit,
+            options: f.options ?? [],
+            formId,
+            order: index + 1,
+          })),
+        });
 
-    await prisma.form.update({
-      where: { id: formId },
-      data: {
-        title,
-        description: desc,
+        // 3. Update form details
+        await tx.form.update({
+          where: { id: formId },
+          data: {
+            title,
+            description: desc,
+          },
+        });
       },
-    });
+      {
+        maxWait: 15000, // 15 sec required to make transaction request to start
+        timeout: 10000, // 10 sec max waits to complete the transaction
+      }
+    );
 
     console.log("updateForm called", formId, Date.now());
   } catch (error) {
