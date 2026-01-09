@@ -14,8 +14,7 @@ export function CreateFormCard({ setPopup, userId }: CreateFormCardProps) {
   const handleCreate = async () => {
     if (
       titleRef.current?.value === "" ||
-      descRef.current?.value === "" ||
-      coverImageRef.current?.value === ""
+      descRef.current?.value === ""
     ) {
       alert("All fields are required!");
       return;
@@ -31,7 +30,7 @@ export function CreateFormCard({ setPopup, userId }: CreateFormCardProps) {
     await createForm({
       title: titleRef.current?.value ?? "",
       description: descRef.current?.value ?? "",
-      coverImage: coverImageRef.current?.value ?? "",
+      coverImage: "temp-image",
       adminId: userId,
     });
 
@@ -50,7 +49,7 @@ export function CreateFormCard({ setPopup, userId }: CreateFormCardProps) {
           label="Title"
           type="text"
           size="md"
-          placeholder="Cooking Pub"
+          placeholder="Cooking Hub"
         />
         <InputBox
           reference={descRef}
@@ -59,15 +58,15 @@ export function CreateFormCard({ setPopup, userId }: CreateFormCardProps) {
           size="md"
           placeholder="cooks..."
         />
-        <InputBox
+        {/* <InputBox
           reference={coverImageRef}
           label="CoverImage"
           type="text"
           size="md"
           placeholder=":)"
-        />
+        /> */}
 
-        <div className="flex items-center gap-3 mt-1">
+        <div className="flex items-center gap-3 mt-2">
           <Button
             variant="primary"
             size="md"
