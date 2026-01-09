@@ -9,6 +9,9 @@ export default function InputBox({
   className,
   readonly,
   defaultValue,
+  required,
+  maxLength,
+  onChange,
 }: InputBoxProps) {
   const sizeStyles = {
     sm: "px-2 py-2 text-sm",
@@ -29,6 +32,13 @@ export default function InputBox({
         className={`${className} ${sizeStyles[size]} ${defaultStyles}`}
         readOnly={readonly}
         defaultValue={defaultValue}
+        required={required}
+        maxLength={
+          maxLength === null || maxLength === undefined || maxLength === 0
+            ? 10000
+            : 8 * maxLength
+        }
+        onChange={onChange}
       />
     </div>
   );

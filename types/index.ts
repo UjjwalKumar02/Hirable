@@ -8,6 +8,7 @@ export interface ButtonProps {
   className?: string;
   loading?: boolean;
   disabled?: boolean;
+  type?: "submit" | "reset" | "button" | undefined;
 }
 
 export interface CreateFormCardProps {
@@ -35,13 +36,16 @@ export interface FormCardProps {
 
 export interface InputBoxProps {
   size: "sm" | "md" | "lg";
-  type: "text" | "long text";
+  type: "text" | "longtext" | "email" | "number";
   label?: string;
   placeholder?: string;
   reference?: React.RefObject<HTMLInputElement | null>;
   className?: string;
   defaultValue?: string;
   readonly?: boolean;
+  required?: boolean;
+  maxLength?: number;
+  onChange?: React.ChangeEventHandler<HTMLInputElement>;
 }
 
 export interface DesignContentProps {
@@ -59,11 +63,13 @@ export interface DropdownInputProps {
   disabled?: boolean;
   onChange?: React.ChangeEventHandler<HTMLSelectElement>;
   defaultValue?: string;
+  required?: boolean;
 }
 
 export type FieldType = "text" | "longtext" | "email" | "number" | "dropdown";
 
 export interface Field {
+  id?: string;
   label: string;
   type: FieldType;
   options?: string[];
@@ -91,4 +97,17 @@ export interface EditFieldProps {
   setFieldList: React.Dispatch<React.SetStateAction<Field[]>>;
   index: number;
   fieldData: Field;
+}
+
+export interface SubmitFormProps {
+  title: string;
+  desc: string;
+  fieldList: Field[];
+  formId: string;
+}
+
+export interface FieldAnswer {
+  id?: string;
+  label?: string;
+  answer?: string | number;
 }

@@ -34,12 +34,12 @@ export function DesignContent({
         formId,
       });
     } catch (error) {
-      setLoading(false);
       console.log(error);
       return;
+    } finally {
+      setLoading(false);
     }
 
-    
     router.push("/dashboard");
   };
 

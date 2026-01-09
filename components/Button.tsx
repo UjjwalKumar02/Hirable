@@ -8,6 +8,7 @@ export function Button({
   className,
   loading,
   disabled,
+  type
 }: ButtonProps) {
   const variantStyles = {
     primary: "bg-black text-gray-100",
@@ -31,6 +32,7 @@ export function Button({
       }`}
       onClick={onClick}
       disabled={disabled}
+      type={type}
     >
       {loading ? "Loading..." : children}
     </button>
