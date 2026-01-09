@@ -2,7 +2,7 @@
 
 A form-building platform designed to create personalized forms and track responses through a dashboard.
 
-![appImage](/public/new_app.png)
+![appImage](/public/app2.png)
 
 ## Tech stack:
 
