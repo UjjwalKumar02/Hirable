@@ -9,6 +9,7 @@ export default function DropdownInput({
   onChange,
   defaultValue,
   required,
+  selectOption
 }: DropdownInputProps) {
   const defaultStyles =
     "outline-none bg-sky-50 text-sm text-gray-900 py-2 px-3 rounded-xl border border-gray-200";
@@ -26,7 +27,7 @@ export default function DropdownInput({
         defaultValue={defaultValue}
         required={required}
       >
-        <option value="">Select</option>
+        {selectOption && <option value="">Select</option>}
         {options.map((o, index) => (
           <option key={index} value={o} disabled={disabled}>
             {o}

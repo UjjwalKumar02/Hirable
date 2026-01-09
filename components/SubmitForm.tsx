@@ -147,6 +147,7 @@ export default function SubmitForm({
                     onChange={(e) =>
                       handleOnChange({ e, label: f.label, id: f.id ?? "" })
                     }
+                    selectOption={true}
                   />
                 )}
               </div>

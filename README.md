@@ -1,10 +1,10 @@
 # Hirable
 
-A form-building platform designed to help you create personalized forms and track responses through a clean, intuitive dashboard.
+A form-building platform designed to create personalized forms and track responses through a dashboard.
 
-![appImage](/public/app.png)
+![appImage](/public/new_app.png)
 
-### Tech stack:
+## Tech stack:
 
 - **Framework** : Next.js
 - **Language** : TypeScript
@@ -12,12 +12,12 @@ A form-building platform designed to help you create personalized forms and trac
 - **ORM** : Prisma
 - **Authentication** : NextAuth
 
-### Features:
+## Features:
 
-- Create personalized forms with ease
-- Track and analyze responses via a form dashboard
-- Clean & intuitive UI/UX for a smooth user experience
+- Create personalized forms
+- Track and analyze responses via a dashboard
+- Clean & intuitive UI/UX
 
 ### Status
 
-Actively under development
+Under development
