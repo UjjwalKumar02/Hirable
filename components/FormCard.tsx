@@ -18,7 +18,7 @@ export function FormCard({ title, slug, isPublic, createdAt }: FormCardProps) {
               Published
             </p>
           ) : (
-            <p className="text-sky-500 border border-sky-500 px-2 py-0.5 font-medium text-sm rounded-xl">
+            <p className="text-purple-500 border border-purple-500 px-2 py-0.5 font-medium text-sm rounded-xl">
               Draft
             </p>
           )}
@@ -35,9 +35,9 @@ export function FormCard({ title, slug, isPublic, createdAt }: FormCardProps) {
           <Button
             variant="primary"
             size="md"
-            onClick={() => router.push(`/${slug}/analytics`)}
+            onClick={() => router.push(`/${slug}/dashboard`)}
           >
-            Analytics
+            Dashboard
           </Button>
         </div>
       </div>

@@ -12,9 +12,9 @@ export default async function Design({
   };
 }) {
   const slug = (await params).slug;
-
   const session = await getServerSession(authOptions);
 
+  // Checking if user is authenticated or not
   if (!session || !session.user || !session.user.id) {
     return <div>Unauthenticated!</div>;
   }
@@ -31,7 +31,7 @@ export default async function Design({
     });
   } catch (error) {
     console.log(error);
-    return;
+    return <div>Internal server error!</div>;
   }
 
   // Converting fields from db to frontend field interface

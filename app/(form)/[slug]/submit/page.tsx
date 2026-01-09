@@ -20,6 +20,11 @@ export default async function Submit({
         fields: true,
       },
     });
+
+    // Check form is private
+    if (form && !form.isPublic) {
+      return <div>This form is private. Contact form owner!</div>;
+    }
   } catch (error) {
     console.log(error);
     return <div>Internal server error</div>;

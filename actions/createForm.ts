@@ -29,7 +29,7 @@ export async function createForm({
     });
   } catch (error) {
     console.log(error);
-    return;
+    throw new Error("Failed to create form!");
   }
 
   revalidatePath("/dashboard");

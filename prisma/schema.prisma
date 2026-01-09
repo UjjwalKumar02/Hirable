@@ -22,11 +22,11 @@ model Form {
   title        String
   description  String?
   coverImage   String?
-  isPublic     Boolean
+  isPublic     Boolean      @default(false)
   maxResponses Int?
   publicLink   String?
   adminId      String
-  admin        User         @relation(fields: [adminId], references: [id])
+  admin        User         @relation(fields: [adminId], references: [id], onDelete: Cascade)
   fields       FormField[]
   submissions  Submission[]
   createdAt    DateTime     @default(now())
@@ -42,7 +42,7 @@ model FormField {
   order     Int
   options   String[]
   formId    String
-  form      Form     @relation(fields: [formId], references: [id])
+  form      Form     @relation(fields: [formId], references: [id], onDelete: Cascade)
   createdAt DateTime @default(now())
 
   answers Answer[]
@@ -53,8 +53,8 @@ model Answer {
   value        Json
   fieldId      String
   submissionId String
-  formField    FormField  @relation(fields: [fieldId], references: [id])
-  submission   Submission @relation(fields: [submissionId], references: [id])
+  formField    FormField  @relation(fields: [fieldId], references: [id], onDelete: Cascade)
+  submission   Submission @relation(fields: [submissionId], references: [id], onDelete: Cascade)
 }
 
 model Submission {
@@ -62,7 +62,7 @@ model Submission {
   ipAddress   String?
   userAgent   String?
   formId      String
-  form        Form?    @relation(fields: [formId], references: [id])
+  form        Form?    @relation(fields: [formId], references: [id], onDelete: Cascade)
   answers     Answer[]
   submittedAt DateTime @default(now())
 }

@@ -34,6 +34,6 @@ export async function submitForm({
     );
   } catch (error) {
     console.log(error);
-    return;
+    throw new Error("Failed to submit form!");
   }
 }

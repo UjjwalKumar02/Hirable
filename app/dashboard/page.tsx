@@ -20,7 +20,7 @@ export default async function Dashboard() {
     });
   } catch (error) {
     console.log(error);
-    return;
+    return <div>Internal server error!</div>;
   }
 
   return <DashboardContent forms={forms} />;

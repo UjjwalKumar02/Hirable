@@ -111,3 +111,14 @@ export interface FieldAnswer {
   label?: string;
   answer?: string | number;
 }
+
+export interface FormDashboardContentProps {
+  title: string;
+  desc: string;
+  isPublic: boolean;
+  fields: Field[];
+  submissions: FieldAnswer[][];
+  avatar: string;
+  slug: string;
+  adminId: string;
+}
