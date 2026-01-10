@@ -96,7 +96,7 @@ export function FormDashboardContent({
               <div className="flex justify-between items-center">
                 <div className="flex gap-2 items-center">
                   <p>Link :</p>
-                  <p className="bg-sky-50 text-xs px-2 py-1.5 font-medium rounded-xl border border-gray-200">{`http://localhost:3000/${slug}/submit`}</p>
+                  <p className="bg-sky-50 text-xs px-2 py-1.5 font-medium rounded-xl border border-gray-200">{`https://hirable-rho.vercel.app/${slug}/submit`}</p>
                 </div>
 
                 <Button
