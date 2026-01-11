@@ -10,7 +10,7 @@ export function Navbar({ avatar }: { avatar: string }) {
   const [dropdown, setDropdown] = useState(false);
 
   return (
-    <div className="w-full px-8 py-6 mt-2 flex justify-between items-center border-b border-gray-200">
+    <div className="sticky top-0 bg-white w-full px-8 py-6 mt-2 flex justify-between items-center border-b border-gray-200">
       <Link href={"/dashboard"}>
         <h1 className="text-2xl font-medium tracking-tighter">Hirable</h1>
       </Link>

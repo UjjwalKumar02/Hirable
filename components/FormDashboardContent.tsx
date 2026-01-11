@@ -55,7 +55,7 @@ export function FormDashboardContent({
 
       <div className="w-full space-y-6 px-6">
         {/* Form headings card */}
-        <div className="px-10 space-y-4">
+        <div className="md:px-10 space-y-4">
           <div className="border border-gray-200 rounded-xl flex flex-col gap-5 px-8 py-8">
             <h1 className="text-2xl font-medium tracking-tight pl-1">
               {title}
@@ -63,17 +63,17 @@ export function FormDashboardContent({
             <p className="text-gray-800 pl-1">{desc}</p>
 
             <div className="flex justify-between items-center">
-              <div className="flex items-center gap-5">
+              <div className="flex md:flex-row flex-col md:items-center gap-5">
                 {isPublic ? (
-                  <p className="border border-green-500 px-3 py-1 text-sm text-green-500 rounded-xl font-medium">
+                  <p className="border border-green-500 px-3 py-1 text-sm text-green-500 rounded-xl font-medium text-center">
                     Status : Published
                   </p>
                 ) : (
-                  <p className="border border-purple-500 px-3 py-1 text-sm text-purple-500 rounded-xl font-medium">
+                  <p className="border border-purple-500 px-3 py-1 text-sm text-purple-500 rounded-xl font-medium text-center">
                     Status : Draft
                   </p>
                 )}
-                <p className="border border-sky-500 px-3 py-1 text-sm text-sky-500 rounded-xl font-medium">
+                <p className="border border-sky-500 px-3 py-1 text-sm text-sky-500 rounded-xl font-medium text-center">
                   Responses : {submissions.length}
                 </p>
               </div>
@@ -93,8 +93,8 @@ export function FormDashboardContent({
             </div>
 
             {isPublic && (
-              <div className="flex justify-between items-center">
-                <div className="flex gap-2 items-center">
+              <div className="flex md:flex-row flex-col justify-between md:items-center md:gap-0 gap-4">
+                <div className="flex md:flex-row flex-col gap-2 md:items-center">
                   <p>Link :</p>
                   <p className="bg-sky-50 text-xs px-2 py-1.5 font-medium rounded-xl border border-gray-200">{`https://hirable-rho.vercel.app/${slug}/submit`}</p>
                 </div>
@@ -169,7 +169,7 @@ export function FormDashboardContent({
         </div>
 
         {/* Delete button */}
-        <div className="flex justify-end px-10 mt-10">
+        <div className="flex justify-end md:px-10 mt-10">
           <Button
             variant="primary"
             size="md"

@@ -8,8 +8,8 @@ export function FormCard({ title, slug, isPublic, createdAt }: FormCardProps) {
   const router = useRouter();
 
   return (
-    <div className="max-w-4xl px-7 py-5 flex flex-col gap-6 rounded-lg border border-gray-200">
-      <div className="flex justify-between items-center">
+    <div className="max-w-4xl px-7 md:py-5 py-7 flex flex-col gap-6 rounded-xl border border-gray-200 shadow-xs">
+      <div className="flex md:flex-row flex-col justify-between md:items-center gap-5">
         <div className="flex items-center gap-3">
           <h1 className="text-lg font-medium tracking-tight">{title}</h1>
 

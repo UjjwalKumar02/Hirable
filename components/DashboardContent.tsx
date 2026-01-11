@@ -17,7 +17,7 @@ export function DashboardContent({ forms }: DashboardContentProps) {
       <Navbar avatar={session?.user.image ?? ""} />
 
       {/* Main content */}
-      <div className="mt-10 w-3xl flex flex-col justify-center items-center gap-8">
+      <div className="my-10 w-full md:px-18 px-7 flex flex-col justify-center items-center gap-8">
         <div className="w-full flex justify-between items-center">
           {/* Title bar */}
           <h1 className="text-xl font-medium tracking-tight">Your forms</h1>

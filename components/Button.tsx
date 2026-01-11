@@ -8,7 +8,7 @@ export function Button({
   className,
   loading,
   disabled,
-  type
+  type,
 }: ButtonProps) {
   const variantStyles = {
     primary: "bg-black text-gray-100",
@@ -16,7 +16,7 @@ export function Button({
   };
 
   const sizeStyles = {
-    sm: "px-2 py-1.5 text-xs",
+    sm: "px-3 py-1.5 text-xs",
     md: "px-4 py-1.5 text-sm",
     lg: "px-6 py-2 text-md",
   };

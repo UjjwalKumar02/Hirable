@@ -53,8 +53,8 @@ export function DesignContent({
   return (
     <div className="min-h-screen mx-auto bg-gray-100 flex flex-col items-center gap-6">
       {/* Title bar */}
-      <div className="sticky top-0 w-5xl flex items-center justify-between py-6">
-        <h1 className="text-xl font-medium tracking-tight mb-2 text-center">
+      <div className="md:bg-transparent bg-gray-100 sticky top-0 w-full max-w-5xl flex items-center justify-between py-6 px-6">
+        <h1 className="text-xl font-medium tracking-tight md:mb-2 mb-4 text-center">
           Design
         </h1>
         <Button
@@ -68,7 +68,7 @@ export function DesignContent({
       </div>
 
       {/* DesignForm */}
-      <div className="w-xl space-y-5">
+      <div className="w-full max-w-xl space-y-5">
         <DesignForm
           title={title ?? ""}
           description={desc ?? ""}
@@ -83,7 +83,7 @@ export function DesignContent({
         />
 
         {/* Save button */}
-        <div className="flex items-center justify-end gap-2 mb-40">
+        <div className="flex items-center justify-end gap-2 mb-40 md:px-0 px-5">
           <Button
             variant="primary"
             size="lg"

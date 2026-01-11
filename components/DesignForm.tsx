@@ -43,9 +43,9 @@ export default function DesignForm({
     <div className="bg-white flex flex-col border border-gray-200 rounded-xl py-2">
       {/* Form headings */}
       <div className="border-b border-gray-200">
-        <div className="px-16 pt-10 pb-6 space-y-6">
+        <div className="md:px-16 px-9 pt-10 pb-6 space-y-6">
           {/* Title */}
-          <div className="flex justify-between items-center">
+          <div className="flex md:flex-row flex-col gap-3 justify-between md:items-center">
             {currentEditHeading === "title" ? (
               <>
                 <InputBox
@@ -59,7 +59,7 @@ export default function DesignForm({
                   variant="secondary"
                   size="md"
                   onClick={handleSaveTitle}
-                  className="h-fit"
+                  className="h-fit w-fit"
                 >
                   Save
                 </Button>
@@ -71,7 +71,7 @@ export default function DesignForm({
                   variant="primary"
                   size="sm"
                   onClick={() => setCurrentEditHeading("title")}
-                  className="h-fit"
+                  className="h-fit w-fit"
                 >
                   <EditIcon />
                 </Button>
@@ -80,7 +80,7 @@ export default function DesignForm({
           </div>
 
           {/* Description */}
-          <div className="flex justify-between items-center">
+          <div className="flex md:flex-row flex-col gap-3 justify-between md:items-center">
             {currentEditHeading === "desc" ? (
               <>
                 <InputBox
@@ -94,7 +94,7 @@ export default function DesignForm({
                   variant="secondary"
                   size="md"
                   onClick={handleSaveDesc}
-                  className="h-fit"
+                  className="h-fit w-fit"
                 >
                   Save
                 </Button>
@@ -106,7 +106,7 @@ export default function DesignForm({
                   variant="primary"
                   size="sm"
                   onClick={() => setCurrentEditHeading("desc")}
-                  className="h-fit"
+                  className="h-fit w-fit"
                 >
                   <EditIcon />
                 </Button>
@@ -117,7 +117,7 @@ export default function DesignForm({
       </div>
 
       {/* Fields */}
-      <div className="px-16 py-10 flex flex-col gap-5">
+      <div className="md:px-16 px-9 py-10 flex flex-col gap-5">
         {fieldList.length === 0 ? (
           <p>This form dont have any fields!</p>
         ) : (
@@ -133,7 +133,7 @@ export default function DesignForm({
                   setCurrentEditField={setCurrentEditField}
                 />
               ) : (
-                <div className="flex justify-between">
+                <div className="flex md:flex-row flex-col gap-3 justify-between">
                   {/* If type of field is dropdown */}
                   {f.type === "dropdown" && (
                     <DropdownInput
