@@ -75,18 +75,18 @@ export default function SubmitForm({
   };
 
   return (
-    <div className="min-h-screen bg-gray-100 flex flex-col items-center gap-8 pt-11 pb-20">
+    <div className="min-h-screen bg-gray-50 flex flex-col items-center gap-8 pt-14 ">
       <form
         onSubmit={(e) => handleSubmit(e)}
-        className="md:w-120 bg-white flex flex-col border border-gray-200 rounded-xl"
+        className="md:min-w-115 max-w-[97%] bg-white flex flex-col border border-gray-200 rounded-lg "
       >
-        <div className="flex flex-col gap-6 md:px-18 px-10 pt-14 pb-9 border-b border-gray-200">
-          <h1 className="text-2xl font-medium tracking-tight">{title}</h1>
-          <p className="text-gray-800 tracking-tight">{desc}</p>
+        <div className="w-full flex flex-col gap-7 md:px-16 px-10 pt-14 pb-8 border-b border-gray-200">
+          <h1 className="text-3xl font-medium tracking-tight">{title}</h1>
+          <p className="text-gray-800 tracking-tight text-sm">{desc}</p>
         </div>
 
         {/* Fields */}
-        <div className="flex flex-col gap-5 md:px-18 px-10 py-8">
+        <div className="flex flex-col gap-5 md:px-16 px-10 py-8">
           {fieldList.length !== 0 &&
             fieldList.map((f, index) => (
               <div key={index}>
@@ -157,10 +157,10 @@ export default function SubmitForm({
         {/* Sumbit button */}
         <Button
           variant="primary"
-          size="lg"
+          size="md"
           onClick={() => console.log("Submitting...")}
           type="submit"
-          className="mt-5 md:mx-18 mx-10 mb-14 space-y-8 w-fit"
+          className=" md:mx-16 mx-10 mb-10 space-y-8 w-fit"
           loading={loading}
           disabled={disabled}
         >

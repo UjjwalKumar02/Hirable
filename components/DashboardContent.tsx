@@ -1,7 +1,7 @@
 "use client";
 
 import { DashboardContentProps } from "@/types";
-import { FormCard } from "./FormCard";
+// import { FormCard } from "./FormCard";
 import { Navbar } from "./Navbar";
 import { useState } from "react";
 import { Button } from "./Button";
@@ -37,12 +37,12 @@ export function DashboardContent({ forms }: DashboardContentProps) {
           <div className="w-full flex flex-col justify-center gap-4">
             {forms.map((f) => (
               <div key={f.id}>
-                <FormCard
+                {/* <FormCard
                   title={f.title}
                   slug={f.slug}
                   isPublic={f.isPublic}
                   createdAt={f.createdAt}
-                />
+                /> */}
               </div>
             ))}
           </div>

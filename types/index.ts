@@ -64,7 +64,7 @@ export interface DropdownInputProps {
   onChange?: React.ChangeEventHandler<HTMLSelectElement>;
   defaultValue?: string;
   required?: boolean;
-  selectOption?: boolean
+  selectOption?: boolean;
 }
 
 export type FieldType = "text" | "longtext" | "email" | "number" | "dropdown";
@@ -122,4 +122,5 @@ export interface FormDashboardContentProps {
   avatar: string;
   slug: string;
   adminId: string;
+  createdAt: Date;
 }

@@ -1,5 +1,6 @@
 import { authOptions } from "@/app/api/auth/[...nextauth]/route";
-import { FormDashboardContent } from "@/components/FormDashboardContent";
+// import { FormDashboardContent } from "@/components/FormDashboardContent";
+import { FormDashboardContentV2 } from "@/componentsV2/FormDashboardContentV2";
 import prisma from "@/lib/prisma";
 import { Field, FieldAnswer, FieldType } from "@/types";
 import { getServerSession } from "next-auth";
@@ -65,8 +66,21 @@ export default async function FormDashboard({
     }
   });
 
+  // return (
+  //   <FormDashboardContent
+  //     title={form?.title ?? ""}
+  //     desc={form?.description ?? ""}
+  //     isPublic={form?.isPublic ?? false}
+  //     fields={fieldList}
+  //     submissions={submissionList}
+  //     avatar={session.user.image ?? ""}
+  //     slug={slug}
+  //     adminId={session.user.id}
+  //   />
+  // );
+
   return (
-    <FormDashboardContent
+    <FormDashboardContentV2
       title={form?.title ?? ""}
       desc={form?.description ?? ""}
       isPublic={form?.isPublic ?? false}
@@ -75,6 +89,7 @@ export default async function FormDashboard({
       avatar={session.user.image ?? ""}
       slug={slug}
       adminId={session.user.id}
+      createdAt={form?.createdAt ?? new Date()}
     />
   );
 }

@@ -1,5 +1,6 @@
+import { DesignContentV2 } from "@/componentsV2/DesignContentV2";
 import { authOptions } from "@/app/api/auth/[...nextauth]/route";
-import { DesignContent } from "@/components/DesignContent";
+// import { DesignContent } from "@/components/DesignContent";
 import prisma from "@/lib/prisma";
 import { Field, FieldType } from "@/types";
 import { getServerSession } from "next-auth";
@@ -48,8 +49,18 @@ export default async function Design({
     }
   }
 
+  // return (
+  //   <DesignContent
+  //     formTitle={form?.title ?? ""}
+  //     formDesc={form?.description ?? ""}
+  //     fields={fieldList}
+  //     formId={form?.id ?? ""}
+  //   />
+  // );
+
   return (
-    <DesignContent
+    <DesignContentV2
+      avatar={session.user.image ?? ""}
       formTitle={form?.title ?? ""}
       formDesc={form?.description ?? ""}
       fields={fieldList}

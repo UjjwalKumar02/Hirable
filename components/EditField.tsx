@@ -1,8 +1,8 @@
 import { useRef, useState } from "react";
-import { Button } from "./Button";
 import DropdownInput from "./DropdownInput";
 import InputBox from "./InputBox";
 import { EditFieldProps, Field, FieldType } from "@/types";
+import { ButtonV2 } from "../componentsV2/ButtonV2";
 
 const OPTION_TYPES = ["dropdown"];
 const WORDLIMIT_TYPES = ["text", "longtext"];
@@ -120,14 +120,14 @@ export default function EditField({
       </div>
 
       <div>
-        <Button
-          variant="secondary"
+        <ButtonV2
+          variant="primary"
           size="md"
           onClick={handleSaveField}
           className="h-fit w-full"
         >
           Save
-        </Button>
+        </ButtonV2>
       </div>
     </div>
   );
