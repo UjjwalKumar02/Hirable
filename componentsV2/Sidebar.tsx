@@ -72,7 +72,7 @@ export function Sidebar({
 
             <div className="flex items-center gap-2.5 text-sm">
               <DesignIcon />
-              <p>Design</p>
+              <p>Design (soon)</p>
             </div>
 
             <button

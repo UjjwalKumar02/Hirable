@@ -13,6 +13,7 @@ import InputBox from "@/components/InputBox";
 import { DashboardIcon } from "@/icons/DashboardIcon";
 import { ToggleIcon } from "@/icons/ToggleIcon";
 import { DeleteIcon } from "@/icons/DeleteIcon";
+import { MobileNav } from "./MobileNav";
 
 export function FormDashboardContentV2({
   title,
@@ -29,6 +30,7 @@ export function FormDashboardContentV2({
   const [publishLoading, setPublishLoading] = useState(false);
   const [deleteLoading, setDeleteLoading] = useState(false);
   const router = useRouter();
+  const [mobileNav, setMobileNav] = useState(false);
 
   // Toggle publish handler
   const handleTogglePublish = async (isPublic: boolean) => {
@@ -70,7 +72,11 @@ export function FormDashboardContentV2({
           {/* Header */}
           <div className="w-full flex items-center justify-between">
             <div className="flex items-center gap-2.5 text-sm text-gray-600">
-              <DashboardIcon />
+              <button onClick={() => setMobileNav(true)}>
+                <DashboardIcon />
+              </button>
+              {/* Mobile nav */}
+              <MobileNav mobileNav={mobileNav} setMobileNav={setMobileNav} />
               <p>Dashboard</p>
             </div>
 

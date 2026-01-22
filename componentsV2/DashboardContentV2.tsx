@@ -9,6 +9,7 @@ import { useState } from "react";
 import { Form } from "../app/generated/prisma/client";
 import { CreateFormCardV2 } from "@/componentsV2/CreateFormCardV2";
 import { ButtonV2 } from "@/componentsV2/ButtonV2";
+import { MobileNav } from "./MobileNav";
 
 export default function DashboardContentV2({
   userId,
@@ -21,6 +22,7 @@ export default function DashboardContentV2({
 }) {
   const [collapse, setCollapse] = useState(false);
   const [popup, setPopup] = useState<"create" | null>(null);
+  const [mobileNav, setMobileNav] = useState(false);
 
   return (
     <>
@@ -37,7 +39,11 @@ export default function DashboardContentV2({
             {/* Header */}
             <div className="w-full flex items-center justify-between">
               <div className="flex items-center gap-2.5 text-sm text-gray-600">
-                <HomeIcon />
+                <button onClick={() => setMobileNav(true)}>
+                  <HomeIcon />
+                </button>
+                {/* Mobile nav */}
+                <MobileNav mobileNav={mobileNav} setMobileNav={setMobileNav} />
                 <p>Home</p>
               </div>
 

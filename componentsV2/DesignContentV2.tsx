@@ -11,6 +11,7 @@ import { Field } from "@/types";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
+import { MobileNav } from "./MobileNav";
 
 export function DesignContentV2({
   avatar,
@@ -35,6 +36,7 @@ export function DesignContentV2({
   >(null);
   const [loading, setLoading] = useState(false);
   const router = useRouter();
+  const [mobileNav, setMobileNav] = useState(false);
 
   // Save form handler
   const handleSaveForm = async () => {
@@ -76,7 +78,11 @@ export function DesignContentV2({
           {/* Header */}
           <div className="w-full flex items-center justify-between">
             <div className="flex items-center gap-2.5 text-sm text-gray-600">
-              <DesignIcon />
+              <button onClick={() => setMobileNav(true)}>
+                <DesignIcon />
+              </button>
+              {/* Mobile nav */}
+              <MobileNav mobileNav={mobileNav} setMobileNav={setMobileNav} />
               <p>Design</p>
             </div>
 
