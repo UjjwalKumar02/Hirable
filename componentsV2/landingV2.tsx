@@ -38,7 +38,7 @@ export default function LandingV2() {
       <div className="min-h-screen flex flex-col items-center gap-9 lg:px-0 px-6">
         <div className="flex flex-col items-center gap-3 pt-36 md:pt-28 text-center">
           <h1 className="text-3xl lg:text-4xl font-medium tracking-tight">
-            Build cool forms with Hirable
+            Build custom forms with Hirable
           </h1>
           <p>Create personalized forms and track responses</p>
           <ButtonV2
@@ -70,7 +70,7 @@ export default function LandingV2() {
             <h1 className="text-xl lg:text-3xl font-medium tracking-tight">
               Design
             </h1>
-            <p>Create your own personalized form</p>
+            <p>Craft according to your needs</p>
           </div>
 
           <Image
@@ -94,7 +94,7 @@ export default function LandingV2() {
         />
         <div className="flex md:flex-row flex-col items-center justify-center gap-4 py-6">
           <h1 className="text-xl lg:text-3xl font-medium tracking-tight">
-            Start creating forms
+            Explore new forms
           </h1>
 
           <ButtonV2

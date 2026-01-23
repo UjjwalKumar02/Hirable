@@ -11,7 +11,7 @@ export function ButtonV2({
   type,
 }: ButtonProps) {
   const variantStyles = {
-    primary: "bg-black text-white",
+    primary: "bg-black text-gray-100",
     secondary: "bg-white border border-gray-300",
   };
 
