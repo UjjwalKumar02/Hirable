@@ -1,5 +1,5 @@
 import { CollapseIcon } from "@/icons/CollapseIcon";
-import { DesignIcon } from "@/icons/DesignIcon";
+// import { DesignIcon } from "@/icons/DesignIcon";
 import { ExpandIcon } from "@/icons/ExpandIcon";
 import { HomeIcon } from "@/icons/HomeIcon";
 import { LogoutIcon } from "@/icons/LogoutIcon";
@@ -33,7 +33,7 @@ export function Sidebar({
               <HomeIcon />
             </Link>
 
-            <DesignIcon />
+            {/* <DesignIcon /> */}
 
             <button
               onClick={() => signOut({ callbackUrl: "http://localhost:3000" })}
@@ -70,10 +70,10 @@ export function Sidebar({
               </div>
             </Link>
 
-            <div className="flex items-center gap-2.5 text-sm">
+            {/* <div className="flex items-center gap-2.5 text-sm">
               <DesignIcon />
               <p>Design (soon)</p>
-            </div>
+            </div> */}
 
             <button
               className="flex items-center gap-2.5 text-sm cursor-pointer"
